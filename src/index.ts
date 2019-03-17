@@ -2,6 +2,8 @@ import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
 
+import * as userAuthentication from './routes/authentication/user_authentication.router';
+
 /**
  * Setup express server
  */
@@ -12,6 +14,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/authentication', userAuthentication.getUser());
+app.use('/authentication', userAuthentication.userSignUp());
 
 app.get( '/', function ( req, res )
 {
