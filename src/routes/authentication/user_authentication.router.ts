@@ -12,6 +12,32 @@ export function userSignUp(): express.Router{
   return router;
 }
 
+/**
+ * @swagger
+ * definition:
+ *   users:
+ *     properties:
+ *       name:
+ *         type: string
+ *       phone_number:
+ *         type: string
+ */
+
+/**
+ * @swagger
+ * /authentication/getUser:
+ *   get:
+ *     tags:
+ *       - users
+ *     description: Gets all users
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: Successfully deleted
+ *         schema:
+ *           $ref: '#/definitions/users'
+ */
 export function getUser(): express.Router{
   var router = express.Router();
   router.get('/getUser', (req, res) => {
