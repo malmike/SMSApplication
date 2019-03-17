@@ -1,0 +1,30 @@
+{
+  "name": "sms-application",
+  "version": "0.0.0",
+  "description": "SMSApplication",
+  "main": "server.js",
+  "scripts": {
+    "tsc": "tsc",
+    "copy-public": "cp -r src/public dist",
+    "start": "tsc && npm run copy-public && node dist/index.js",
+    "start-dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "author": {
+    "name": "WORK"
+  },
+  "dependencies": {
+    "@types/node": "10.12.18",
+    "express": "^4.16.4",
+    "swagger-jsdoc": "^3.2.7",
+    "typescript": "^3.3.3333"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/express": "^4.16.1",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "dotenv": "^7.0.0",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.3"
+  }
+}
