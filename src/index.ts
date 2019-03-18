@@ -1,12 +1,15 @@
 import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
+import * as mongoose from 'mongoose';
 
-import * as userAuthentication from './routes/authentication/user_authentication.router';
+import UserAuthentication from './routes/authentication/user_authentication.router';
 import ApiDocumentation from './api_documentation'
 import { Utilities } from './utilities/utilities';
 import config from './config';
 
+mongoose.connect(config.DB_URI);
+const userAuthentication = new UserAuthentication();
 const apiDocumentation = new ApiDocumentation();
 
 /**
