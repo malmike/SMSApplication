@@ -12,7 +12,13 @@ const Schema = mongoose.Schema;
  *       phone_number:
  *         type: string
  */
-const user = new Schema(
+
+export interface User extends mongoose.Document{
+  name: string;
+  phone_number: string
+}
+
+const userSchema = new Schema(
   {
     name: {
       type: String
@@ -23,6 +29,4 @@ const user = new Schema(
   }
 )
 
-const UserModel = mongoose.model('User', user);
-
-export default UserModel;
+export const UserModel = mongoose.model<User>('User', userSchema);
