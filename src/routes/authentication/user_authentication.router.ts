@@ -1,5 +1,5 @@
 import * as express from 'express';
-import UserModel from '../../models/user.model';
+import {UserModel} from '../../models/user.model';
 
 export default class UserAuthentication{
   router: express.Router;

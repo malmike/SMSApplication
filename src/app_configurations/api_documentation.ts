@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as swaggerJSDoc from 'swagger-jsdoc';
 
-import { Utilities } from './utilities/utilities';
+import { Utilities } from '../utilities/utilities';
 import config from './config';
 
 export default class ApiDocumentation{
