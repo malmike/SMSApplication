@@ -14,7 +14,7 @@ import config from './app_configurations/config';
  */
 
 export default class ServerSetup{
-  private app = express();
+  app = express();
   private userAuthentication: UserAuthentication;
   private apiDocumentation: ApiDocumentation;
 

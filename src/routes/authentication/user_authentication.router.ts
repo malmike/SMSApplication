@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {UserModel} from '../../models/user.model';
+import {UserModel, User} from '../../models/user.model';
 
 export default class UserAuthentication{
   router: express.Router;
@@ -8,10 +8,11 @@ export default class UserAuthentication{
   }
 
   userSignUp(): express.Router{
-    this.router.post('/registerUser', (req, res) => {
-      const user = new UserModel(req.body);
-      user.save();
-      return res.status(201).send(JSON.stringify(user))
+    this.router.post('/registerUser', async (req, res) => {
+      const user: User = new UserModel(req.body as User);
+      await user.save();
+      res.status(201);
+      res.send(user);
     })
     return this.router;
   }
@@ -32,8 +33,8 @@ export default class UserAuthentication{
    *           $ref: '#/definitions/users'
    */
   getUser(): express.Router{
-    this.router.get('/getUser', (req, res) => {
-      UserModel.find((err, values)=> {
+    this.router.get('/getUser', async (req, res) => {
+      await UserModel.find((err, values)=> {
         if(err) res.status(500).send(err)
         else res.json(values);
       })
