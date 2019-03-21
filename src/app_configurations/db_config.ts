@@ -12,9 +12,10 @@ export default class DBConfig{
   }
 
   async dbConnection(){
+    const setDebug = (config.DB_DEBUG_OPTION === "true");
     try{
       const db = await mongoose.connect(this.connString, this.dbConnectionOptions);
-      mongoose.set('debug', config.DB_DEBUG_OPTION)
+      mongoose.set('debug', setDebug)
     }
     catch(error){
       throw(`Could not connect to mongo DB: ${error}`);
