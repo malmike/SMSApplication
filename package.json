@@ -6,7 +6,9 @@
   "scripts": {
     "tsc": "tsc",
     "copy-public": "cp -r src/public dist",
-    "start": "tsc && npm run copy-public && node dist/index.js",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "postinstall": "npm run build && npm run copy-public",
     "start-dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "mocha --exit --require ts-node/register src/**/*.spec.ts",
     "test-coverage": "nyc mocha --exit --require ts-node/register src/**/*.spec.ts",
