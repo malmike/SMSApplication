@@ -19,7 +19,7 @@ export default class ApiDocumentation{
       host: '',
       basePath: '/',
     },
-    apis: ['./**/*.router.js', './**/*.router.ts', './**/*.model.js', './**/*.model.ts'],
+    apis: ['./**/*.router.js', './**/*.router.ts', './**/*.middleware.js', './**/*.middleware.ts', './**/*.model.js', './**/*.model.ts'],
   };
 
   private router: express.Router;
