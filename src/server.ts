@@ -7,6 +7,7 @@ import ApiDocumentation from './app_configurations/api_documentation';
 import { Utilities } from './utilities/utilities';
 import config from './app_configurations/config';
 import ContactRoutes from './routes/contacts/contact.router';
+import SmsRoutes from './routes/sms/sms.router';
 
 
 
@@ -20,11 +21,13 @@ export default class ServerSetup{
   private userRegistrationRoutes: UserRegistrationRoutes;
   private apiDocumentation: ApiDocumentation;
   private contactRoutes: ContactRoutes;
+  private smsRoutes: SmsRoutes;
 
   constructor(){
     this.userRegistrationRoutes = new UserRegistrationRoutes();
     this.apiDocumentation = new ApiDocumentation();
     this.contactRoutes = new ContactRoutes();
+    this.smsRoutes = new SmsRoutes();
   }
 
   serverSetup(){
@@ -45,6 +48,9 @@ export default class ServerSetup{
     this.app.use(this.contactRoutes.addContact());
     this.app.use(this.contactRoutes.deleteContact());
     this.app.use(this.contactRoutes.getContacts());
+    this.app.use(this.smsRoutes.sendSms());
+    this.app.use(this.smsRoutes.updateReadStatus());
+    this.app.use(this.smsRoutes.getSmsThread());
     this.app.listen( port, function ()
     {
       console.log( 'Running on port: ' + port );
