@@ -40,6 +40,9 @@
     "supertest": "^4.0.2",
     "ts-node": "^8.0.3"
   },
+  "engines": {
+    "node": "10.4.0"
+  },
   "nyc": {
     "include": [
       "src/**/*.ts",
