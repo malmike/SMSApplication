@@ -15,7 +15,7 @@ export default class DBConfig{
     const setDebug = (config.DB_DEBUG_OPTION === "true");
     try{
       const db = await mongoose.connect(this.connString, this.dbConnectionOptions);
-      mongoose.set('debug', setDebug)
+      mongoose.set('debug', setDebug);
     }
     catch(error){
       throw(`Could not connect to mongo DB: ${error}`);

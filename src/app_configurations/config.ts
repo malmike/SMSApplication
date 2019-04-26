@@ -5,7 +5,8 @@ dotenv.config()
 const config = {
   DB_URI: process.env.DB_URI,
   PORT: parseInt(process.env.PORT) | 1337,
-  DB_DEBUG_OPTION: process.env.DB_DEBUG_OPTION
+  DB_DEBUG_OPTION: process.env.DB_DEBUG_OPTION,
+  APP_SECRET: process.env.APP_SECRET
 }
 
 export default config;
