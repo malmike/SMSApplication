@@ -1,5 +1,6 @@
 # SMSApplication
 
+[![CircleCI](https://circleci.com/gh/malmike/SMSApplication.svg?style=svg)](https://circleci.com/gh/malmike/SMSApplication)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcb2d0ac168ba2dadf5c/maintainability)](https://codeclimate.com/github/malmike/SMSApplication/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fcb2d0ac168ba2dadf5c/test_coverage)](https://codeclimate.com/github/malmike/SMSApplication/test_coverage)
 
